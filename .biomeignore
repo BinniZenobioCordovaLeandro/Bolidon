@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.expo/
+
+# Generated files
+*.log
+coverage/
+
+# Metro cache
+.metro-health-check*
+
+# Environment files
+.env*
+
+# TypeScript build outputs
+*.tsbuildinfo
+
+# React Native
+android/
+ios/
+
+# Documentation
+docs/

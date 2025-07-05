@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido a BOLIDON</title>
+  <link rel="icon" href="bolidon.png" type="image/png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <style>
+    :root {
+     --gradient-angle: 135deg;
+      --primary: #6200ee;
+      --primary-hover: #3700b3;
+      --background: linear-gradient(var(--gradient-angle), #e0c3fc 0%, #8ec5fc 100%);
+      --text: #212121;
+      --btn-gradient: linear-gradient(var(--gradient-angle), #6200ee 0%, #03dac6 100%);
+      --btn-gradient-hover: linear-gradient(var(--gradient-angle), #03dac6 0%, #6200ee 100%);
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem 1rem;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    /* Wrapper for content columns */
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    /* Main content spacing */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 50px;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      background: linear-gradient(var(--gradient-angle), #6200ee, #03dac6);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+
+    p {
+      max-width: 400px;
+      text-align: center;
+      margin: 0.5rem 0;
+      line-height: 1.5;
+    }
+
+    /* QR code section spacing */
+    .qr-code {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      background: rgba(255,255,255,0.85);
+      padding: 1rem;
+      border-radius: 24px;
+      text-align: center;
+    }
+
+    .qr-code img {
+      width: 220px;
+      height: 220px;
+      border-radius: 8px;
+      filter: none;
+    }
+
+    /* Button styling adjustments */
+    .btn {
+      margin-top: 1.5rem;
+      background-image: var(--btn-gradient);
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 32px;
+      font-size: clamp(1rem, 4vw, 1.125rem);
+      font-weight: 500;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-image 0.3s ease, transform 0.1s ease;
+    }
+
+    .btn:hover {
+      background-image: var(--btn-gradient-hover);
+    }
+
+    @supports (color: color(display-p3 0.5 0.2 0.7)) {
+      :root {
+        --primary: color(display-p3 0.7 0 1);
+        --primary-hover: color(display-p3 0.5 0 0.8);
+      }
+    }
+    /* Responsive adjustments */
+    @media (max-width: 360px) {
+      body { padding: 1.5rem 0.5rem; }
+      .logo { width: 100px; }
+      p { font-size: 0.9rem; }
+      .btn { padding: 0.75rem 1rem; font-size: clamp(0.875rem, 4vw, 1rem); }
+      .qr-code img { width: 180px; height: 180px; }
+    }
+    @media (min-width: 600px) {
+      .content-wrapper {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .main-content {
+        width: 50%;
+        max-width: 400px;
+        text-align: left;
+      }
+      .logo { width: 150px; }
+      .btn { padding: 1.25rem 2.5rem; font-size: clamp(1.125rem, 3vw, 1.5rem); }
+      .qr-code {
+        margin-top: 0;
+      }
+      .qr-code img { width: 260px; height: 260px; }
+    }
+    /* Dark mode theme overrides */
+    @media (prefers-color-scheme: dark) {
+      :root {
+       --background: linear-gradient(var(--gradient-angle), #0A0A0A 0%, #2C2C2E 50%, #48484A 100%);
+       --text: #F2F2F7;
+       --btn-gradient: linear-gradient(var(--gradient-angle), #0A84FF 0%, #BF5AF2 100%);
+       --btn-gradient-hover: linear-gradient(var(--gradient-angle), #BF5AF2 0%, #0A84FF 100%);
+      }
+      body {
+        background: var(--background);
+        color: var(--text);
+      }
+      .qr-code {
+        background: rgba(28,28,30,0.85);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <div class="main-content">
+     <img src="bolidon.png" alt="Logo de BOLIDON" class="logo" />
+     <h1>Descarga la app BOLIDON</h1>
+     <p>Gestiona el mantenimiento de tu vehículo como un profesional. Registra servicios rápidamente, gestiona varias matrículas, sincroniza en múltiples dispositivos y comparte tu historial de mantenimiento con facilidad.</p>
+     <a class="btn" href="https://expo.dev/artifacts/eas/wp6gTn9EkmEPmLsqiH9FEW.apk" target="_blank" rel="noopener">Descargar la App</a>
+    </div>
+    <div class="qr-code">
+     <p>O escanea el código QR para descargar:</p>
+     <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://expo.dev/artifacts/eas/wp6gTn9EkmEPmLsqiH9FEW.apk" alt="Escanea para descargar App BOLIDON">
+    </div>
+  </div>
+</body>
+</html>
